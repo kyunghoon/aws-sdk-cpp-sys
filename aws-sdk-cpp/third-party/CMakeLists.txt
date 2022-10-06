@@ -14,8 +14,8 @@ set(AWS_DEPS_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}" CACHE PATH "Dependencies inst
 set(AWS_DEPS_BUILD_DIR "${CMAKE_BINARY_DIR}/build" CACHE PATH "Dependencies build directory.")
 set(AWS_DEPS_DOWNLOAD_DIR "${AWS_DEPS_BUILD_DIR}/downloads" CACHE PATH "Dependencies download directory.")
 
-set(AWS_C_COMMON_URL "https://github.com/awslabs/aws-c-common.git")
-set(AWS_C_COMMON_TAG "v0.4.42")
+set(AWS_C_COMMON_URL "https://github.com/kyunghoon/aws-c-common.git")
+set(AWS_C_COMMON_TAG "blake-dev")
 include(BuildAwsCCommon)
 
 set(AWS_CHECKSUMS_URL "https://github.com/awslabs/aws-checksums.git")

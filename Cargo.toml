@@ -11,4 +11,4 @@ cmake = "0.1.48"
 anyhow = "1.0.65"
 
 [dependencies]
-curl-sys = { path = "../curl-sys" }
+curl-sys = { git = "https://github.com/kyunghoon/curl-sys.git", tag="0.0.1" }

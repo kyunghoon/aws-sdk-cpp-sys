@@ -2,7 +2,7 @@
 name = "aws-sdk-sys"
 version = "0.1.0"
 edition = "2021"
-link = "aws-sdk"
+links = "aws-sdk"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 

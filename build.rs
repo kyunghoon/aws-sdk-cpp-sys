@@ -29,7 +29,6 @@ fn go() -> Result<()> {
     //println!("cargo:rustc-link-lib=static=aws-sdk-cpp");
     println!("cargo:INCLUDE={}/include", out_dir);
     println!("cargo:LIB={}/lib", out_dir);
-    println!("cargo:warning={}", out_dir);
 
     Ok(())
 }

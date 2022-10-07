@@ -1,7 +1,8 @@
 [package]
-name = "aws-sdk-cpp-sys"
+name = "aws-sdk-sys"
 version = "0.1.0"
 edition = "2021"
+link = "aws-sdk"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -10,3 +11,4 @@ cmake = "0.1.48"
 anyhow = "1.0.65"
 
 [dependencies]
+curl-sys = { path = "../curl-sys" }

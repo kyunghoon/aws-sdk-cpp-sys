@@ -7,7 +7,7 @@ fn go() -> Result<()> {
     match var("TARGET") {
         Ok(target) if target == "aarch64-linux-android" => {
             match var("HOST") {
-                Ok(host) if host == "x86_64-apple-darwin" => {
+                Ok(host) if host == "x86_64-apple-darwin" || host == "aarch64-apple-darwin" => {
                     assert!(Path::new(&format!("{}/libcurl.a", var("DEP_CURL_LIB").unwrap())).exists());
                     assert!(Path::new(&format!("{}/libcrypto.a", var("DEP_OPENSSL_LIB").unwrap())).exists());
                     assert!(Path::new(&format!("{}/libssl.a", var("DEP_OPENSSL_LIB").unwrap())).exists());

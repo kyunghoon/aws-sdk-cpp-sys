@@ -41,7 +41,16 @@ fn go() -> Result<()> {
             }
         }
         _ => {
-            let xc_run_output = Command::new("xcrun").args(["-sdk", "macosx", "--show-sdk-path"]).output()?;
+            let host = std::env::var("HOST").unwrap();
+            let mut cmd = match host.as_str() {
+                h if h == "x86_64-apple-darwin" => Command::new("cxcrun"),
+                h if h == "aarch64-apple-darwin" => Command::new("arch"),
+                _ => panic!("unsupported host"),
+            };
+
+            let xc_run_output = if host != "aarch64-apple-darwin" { &mut cmd } else {
+                cmd.arg("-x86_64").arg("xcrun")
+            }.args(["-sdk", "macosx", "--show-sdk-path"]).output()?;
             let xc_sdk_path = std::str::from_utf8(&xc_run_output.stdout)?.trim();
             cmake::Config::new("aws-sdk-cpp")
                 .always_configure(true)
